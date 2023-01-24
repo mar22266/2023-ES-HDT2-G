@@ -12,5 +12,4 @@
 
         T pull();
 
-        T peek();
     }
