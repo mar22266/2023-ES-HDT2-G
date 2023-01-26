@@ -7,6 +7,10 @@ import java.util.ArrayList;
  * Seccion 10 estructura de datos
  */
 public class Principal {
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
 
     }
