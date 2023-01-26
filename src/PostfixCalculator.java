@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Vector implements IStack, IPostfixCalculator {
+public class PostfixCalculator implements IStack, IPostfixCalculator {
     @Override
     public int count() {
         return 0;
