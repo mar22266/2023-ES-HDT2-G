@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Vector implements IPila, IPostfixCalculator {
+public class Vector implements IStack, IPostfixCalculator {
     @Override
     public int count() {
         return 0;
@@ -22,7 +22,7 @@ public class Vector implements IPila, IPostfixCalculator {
     }
 
     @Override
-    public boolean isOneItem(IPila operandos) {
+    public boolean isOneItem(IStack operandos) {
         return false;
     }
 

@@ -2,7 +2,7 @@
      * @author MAAG
      *
      */
-    public interface IPila<T> {
+    public interface IStack<T> {
 
         int count();
 

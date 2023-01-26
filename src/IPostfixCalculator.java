@@ -3,7 +3,7 @@
  */
 public interface IPostfixCalculator {
 
-    boolean isOneItem(IPila operandos);
+    boolean isOneItem(IStack operandos);
 
     int suma(int a, int b);
 
