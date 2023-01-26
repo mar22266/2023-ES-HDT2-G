@@ -1,26 +1,11 @@
 import java.util.ArrayList;
-
-public class PostfixCalculator implements IStack, IPostfixCalculator {
-    @Override
-    public int count() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public void push(Object value) {
-
-    }
-
-    @Override
-    public Object pull() {
-        return null;
-    }
-
+/**
+ * @author Andre marroquin
+ * Gabriell paz
+ * Andy fuentes
+ * Seccion 10 estructura de datos
+ */
+public class PostfixCalculator implements IPostfixCalculator {
     @Override
     public boolean isOneItem(IStack operandos) {
         return false;

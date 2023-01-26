@@ -1,6 +1,12 @@
 /**
  * @author Seccion 10
  */
+/**
+ * @author Andre marroquin
+ * Gabriell paz
+ * Andy fuentes
+ * Seccion 10 estructura de datos
+ */
 public interface IPostfixCalculator {
 
     boolean isOneItem(IStack operandos);
