@@ -7,7 +7,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
  * Andy fuentes
  * Seccion 10 estructura de datos
  */
-public class Archivos {
+public class Controladora {
     
     /** 
      * @param args
