@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Andy fuentes
  * Seccion 10 estructura de datos
  */
-public class PostfixCalculator implements IPostfixCalculator {
+public class Pcalculator implements IPostfixCalculator {
     
     /** 
      * @param operandos

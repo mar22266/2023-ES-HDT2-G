@@ -1,5 +1,6 @@
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
 /**
  * @author Andre marroquin
@@ -8,14 +9,16 @@ import java.util.Scanner; // Import the Scanner class to read text files
  * Seccion 10 estructura de datos
  */
 public class Controladora {
+    public ArrayList<String> datos = new ArrayList<String>();
+    private IPostfixCalculator calc = new Pcalculator();
+    private IStack<Integer> stack = new StackUsingArrayList<Integer>();
+
     
     /** 
-     * @param args
+     * @param nameArchivo
      */
-    public static void main(String[] args) {
-        System.out.println("Ingrese la ruta del archivo ej C:\\ejemplos\\example1.txt");
-        Scanner in = new Scanner(System.in);
-        String fpath = in.nextLine();
+    public void importArchivo(String nameArchivo){
+        String fpath = ".\\src\\"+nameArchivo+".txt";
 
         try {
             File myObj = new File(fpath);
@@ -29,5 +32,39 @@ public class Controladora {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+
+}
+
+    public Integer calcular(String datoAcalcular) {
+        ArrayList<String> datossepa = calc.getItems(datoAcalcular);
+        for (String dato: datossepa) {
+            if(calc.isOperator(dato)){
+                int a = stack.pull();
+                int b = stack.pull();
+                int resultado = 0;
+                switch (dato) {
+                    case "+":
+                        resultado = calc.suma(a, b);
+                        break;
+                    case "-":
+                        resultado = calc.resta(a, b);
+                        break;
+                    case "*":
+                        resultado = calc.multiplicacion(a, b);
+                        break;
+                    case "/":
+                        resultado = calc.division(a, b);
+                        break;
+                    default:
+                        break;
+                }
+                stack.push(resultado);
+            }else{
+                stack.push(Integer.parseInt(dato));
+            }
+        }
+            return stack.pull();
+
     }
 }
+
