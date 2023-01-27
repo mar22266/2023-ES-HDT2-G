@@ -72,13 +72,13 @@ public class Pcalculator implements IPostfixCalculator {
 
     
     /** 
-     * @param _expresion
+     * @param vocablo
      * @return ArrayList<String>
      */
     @Override
-    public ArrayList<String> getItems(String _expresion) {
+    public ArrayList<String> getItems(String vocablo) {
         ArrayList<String> datos = new ArrayList<String>();
-        String[] DatosEnLista = _expresion.split(" ");
+        String[] DatosEnLista = vocablo.split(" ");
         for (String dato : DatosEnLista) {
             datos.add(dato);
         }
