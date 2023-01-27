@@ -20,13 +20,15 @@ public class Principal {
         System.out.println("----------------CALCULATOR SIMULATOR--------------");
         System.out.println("Porfavor ingrese la ruta de su archivo: ");
         String fileString = scan.nextLine();
-
-
         ArrayList<String> datos = miControladora.importArchivo(fileString);
-        for(int i=0;i<datos.size(); i++){
-            System.out.println(datos.get(i));
+        ArrayList<Integer> resultados = miControladora.calcular(datos);
+
+        for (int i = 0; i < resultados.size(); i++) {
+            System.out.println("El resultado de la operacion " + (i+1) + " es: " + resultados.get(i));
         }
-        
+
+
+
         
 
     }

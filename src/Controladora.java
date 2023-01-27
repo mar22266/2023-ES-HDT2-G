@@ -13,61 +13,69 @@ public class Controladora {
     private IPostfixCalculator calc = new Pcalculator();
     private IStack<Integer> stack = new StackUsingArrayList<Integer>();
 
-    
-    /** 
+
+    /**
      * @param nameArchivo
      */
-    public ArrayList<String> importArchivo(String nameArchivo){
+    public ArrayList<String> importArchivo(String nameArchivo) {
         String fpath = nameArchivo;
         String data = "";
-        ArrayList<String> lista = new ArrayList<String>();
+        ArrayList<String> datos = new ArrayList<String>();
         try {
             File myObj = new File(fpath);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                data = data + myReader.nextLine() + " ";
-            } 
+                data = myReader.nextLine();
+                datos.add(data);
+            }
             myReader.close();
-            
+
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        lista = calc.getItems(data);
-        return lista;
 
-}
-
-    public Integer calcular(String datoAcalcular) {
-        ArrayList<String> datossepa = calc.getItems(datoAcalcular);
-        for (String dato: datossepa) {
-            if(calc.isOperator(dato)){
-                int a = stack.pull();
-                int b = stack.pull();
-                int resultado = 0;
-                switch (dato) {
-                    case "+":
-                        resultado = calc.suma(a, b);
-                        break;
-                    case "-":
-                        resultado = calc.resta(a, b);
-                        break;
-                    case "*":
-                        resultado = calc.multiplicacion(a, b);
-                        break;
-                    case "/":
-                        resultado = calc.division(a, b);
-                        break;
-                    default:
-                        break;
-                }
-                stack.push(resultado);
-            }else{
-                stack.push(Integer.parseInt(dato));
-            }
-        }
-            return stack.pull();
+        return datos;
 
     }
+
+    public ArrayList<Integer> calcular(ArrayList<String> datoAcalcular) {
+        ArrayList<Integer> resultados = new ArrayList<Integer>();
+        for (int i = 0; i < datoAcalcular.size(); i++) {
+            ArrayList<String> datossepa = calc.getItems(datoAcalcular.get(i));
+
+            for (String dato : datossepa) {
+                if (calc.isOperator(dato)) {
+                    int a = stack.pull();
+                    int b = stack.pull();
+                    int resultado = 0;
+                    switch (dato) {
+                        case "+":
+                            resultado = calc.suma(a, b);
+                            break;
+                        case "-":
+                            resultado = calc.resta(a, b);
+                            break;
+                        case "*":
+                            resultado = calc.multiplicacion(a, b);
+                            break;
+                        case "/":
+                            resultado = calc.division(a, b);
+                            break;
+                        default:
+                            break;
+                    }
+                    stack.push(resultado);
+                } else {
+                    stack.push(Integer.parseInt(dato));
+                }
+            }
+            resultados.add(stack.pull());
+
+        }
+
+        return resultados;
+    }
+
 }
 
