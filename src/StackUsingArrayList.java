@@ -24,6 +24,7 @@ public class StackUsingArrayList<T> implements IStack<T> {
 	
 	/** 
 	 * @return int
+	 * retorna el tamaño de la lista
 	 */
 	@Override
 	public int count() {
@@ -33,6 +34,7 @@ public class StackUsingArrayList<T> implements IStack<T> {
 	
 	/** 
 	 * @return boolean
+	 * verifica si la lista esta vacia
 	 */
 	@Override
 	public boolean isEmpty() {
@@ -42,6 +44,7 @@ public class StackUsingArrayList<T> implements IStack<T> {
 	
 	/** 
 	 * @param value
+	 * agrega un valor a la lista
 	 */
 	@Override
 	public void push(T value) {
@@ -51,6 +54,7 @@ public class StackUsingArrayList<T> implements IStack<T> {
 	
 	/** 
 	 * @return T
+	 * retorna el valor de la lista
 	 */
 	@Override
 	public T pull() {

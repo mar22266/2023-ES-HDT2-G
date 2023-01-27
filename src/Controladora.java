@@ -16,6 +16,8 @@ public class Controladora {
 
     /**
      * @param nameArchivo
+     *
+     * Array list para guardar los datos del archivo
      */
     public ArrayList<String> importArchivo(String nameArchivo) {
         String fpath = nameArchivo;
@@ -39,6 +41,12 @@ public class Controladora {
 
     }
 
+    /**
+     * @param datoAcalcular
+     * @return
+     *
+     * Metodo para calcular los datos del archivo
+     */
     public ArrayList<Integer> calcular(ArrayList<String> datoAcalcular) {
         ArrayList<Integer> resultados = new ArrayList<Integer>();
         for (int i = 0; i < datoAcalcular.size(); i++) {

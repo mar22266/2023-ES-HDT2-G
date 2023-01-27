@@ -10,6 +10,7 @@ public class Pcalculator implements IPostfixCalculator {
     /** 
      * @param operandos
      * @return boolean
+     * verifica si la lista tiene un solo elemento
      */
     @Override
     public boolean isOneItem(IStack operandos) {
@@ -21,6 +22,7 @@ public class Pcalculator implements IPostfixCalculator {
      * @param a
      * @param b
      * @return int
+     * realiza la suma de dos numeros
      */
     @Override
     public int suma(int a, int b) {
@@ -32,6 +34,7 @@ public class Pcalculator implements IPostfixCalculator {
      * @param a
      * @param b
      * @return int
+     * realiza la resta de dos numeros
      */
     @Override
     public int resta(int a, int b) {
@@ -43,6 +46,7 @@ public class Pcalculator implements IPostfixCalculator {
      * @param a
      * @param b
      * @return int
+     *  realiza la multiplicacion de dos numeros
      */
     @Override
     public int multiplicacion(int a, int b) {
@@ -54,6 +58,7 @@ public class Pcalculator implements IPostfixCalculator {
      * @param a
      * @param b
      * @return int
+     *   realiza la division de dos numeros
      */
     @Override
     public int division(int a, int b) {
@@ -64,6 +69,7 @@ public class Pcalculator implements IPostfixCalculator {
     /** 
      * @param item
      * @return boolean
+     *    verifica si el item es un operador
      */
     @Override
     public boolean isOperator(String item) {
@@ -74,6 +80,7 @@ public class Pcalculator implements IPostfixCalculator {
     /** 
      * @param vocablo
      * @return ArrayList<String>
+     *     retorna una lista con los datos de la expresion
      */
     @Override
     public ArrayList<String> getItems(String vocablo) {

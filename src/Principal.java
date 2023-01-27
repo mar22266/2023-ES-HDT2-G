@@ -11,6 +11,8 @@ public class Principal {
     
     /** 
      * @param args
+     * @return void
+     * Realiza la ejecucion del programa
      */
     public static void main(String[] args) {
         Controladora miControladora = new Controladora();
