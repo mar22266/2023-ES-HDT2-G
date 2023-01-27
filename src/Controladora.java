@@ -17,21 +17,24 @@ public class Controladora {
     /** 
      * @param nameArchivo
      */
-    public void importArchivo(String nameArchivo){
-        String fpath = ".\\src\\"+nameArchivo+".txt";
-
+    public ArrayList<String> importArchivo(String nameArchivo){
+        String fpath = nameArchivo;
+        String data = "";
+        ArrayList<String> lista = new ArrayList<String>();
         try {
             File myObj = new File(fpath);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
+                data = data + myReader.nextLine() + " ";
+            } 
             myReader.close();
+            
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        lista = calc.getItems(data);
+        return lista;
 
 }
 
