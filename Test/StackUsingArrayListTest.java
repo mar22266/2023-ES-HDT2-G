@@ -21,7 +21,7 @@ class StackUsingArrayListTest {
 /**
  * Prueba de vacio
  */
-    /
+
     @Test
     void isEmpty() {
         stack.isEmpty();
@@ -39,7 +39,7 @@ class StackUsingArrayListTest {
 /**
  * Prueba de pull
  */
-    /
+
     @Test
     void pull() {
         stack.push(1);
